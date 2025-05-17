@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Célébration des 67 ans de FEBON Messanvi</title>
+    <meta name="description" content="Site commémoratif en l'honneur du 67ème anniversaire de FEBON Messanvi. Célébration et hommage avec des citations inspirantes sur la vie.">
+    <meta name="keywords" content="anniversaire, FEBON Messanvi, célébration, 67 ans, hommage, sagesse">
+    <meta name="author" content="Daniel">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Critical CSS inline for better performance */
+        :root {
+            --primary-color: #ffffff;
+            --accent-color: #e2e2e2;
+            --text-color: #333333;
+            --highlight-color: #f5f5f5;
+            --accent-gold: #d4af37;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, .serif {
+            font-family: 'Cormorant Garamond', serif;
+        }
+        
+        .hero {
+            min-height: 60vh;
+            background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .quote-card {
+            border-left: 3px solid var(--accent-gold);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .quote-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        /* Confetti animation for celebration effect */
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background-color: var(--accent-gold);
+            opacity: 0;
+            animation: confetti-fall 5s ease-in-out infinite;
+        }
+        
+        @keyframes confetti-fall {
+            0% {
+                opacity: 1;
+                top: -10%;
+                transform: translateX(0) rotate(0deg);
+            }
+            100% {
+                opacity: 0;
+                top: 100%;
+                transform: translateX(100px) rotate(360deg);
+            }
+        }
+        
+        .countdown {
+            background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+        }
+        
+        .text-gold {
+            color: var(--accent-gold);
+        }
+        
+        .border-gold {
+            border-color: var(--accent-gold);
+        }
+        
+        .shine {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .shine::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                to right, 
+                rgba(255,255,255,0) 0%,
+                rgba(255,255,255,0.3) 50%,
+                rgba(255,255,255,0) 100%
+            );
+            transform: rotate(30deg);
+            animation: shine 6s infinite linear;
+        }
+        
+        @keyframes shine {
+            0% {
+                transform: translateX(-100%) rotate(30deg);
+            }
+            100% {
+                transform: translateX(100%) rotate(30deg);
+            }
+        }
+        
+        .fade-in {
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <div id="confetti-container"></div>
+    
+    <header class="hero flex items-center justify-center px-4 shadow-sm">
+        <div class="text-center fade-in">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-semibold mb-4 text-gold shine">FEBON Messanvi</h1>
+            <p class="text-xl md:text-2xl mb-6 serif italic">Célébration de 67 années de sagesse et d'inspiration</p>
+            <div class="inline-block rounded-full bg-white px-6 py-2 shadow-md border border-gold pulse">
+                <span class="text-xl font-bold">17 Mai 2024</span>
+            </div>
+        </div>
+    </header>
+
+    <section class="container mx-auto px-4 py-12 fade-in">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <h2 class="text-3xl md:text-4xl mb-6 font-semibold">À un homme exceptionnel</h2>
+            <p class="text-lg mb-6">En ce jour spécial, nous célébrons 67 années d'une vie riche en sagesse, en amour et en accomplissements.</p>
+            <p class="text-lg mb-4">Avec tout mon respect et mon amour,</p>
+            <p class="text-xl font-semibold serif">Daniel</p>
+        </div>
+        
+        <div class="countdown py-8 px-4 rounded-lg shadow-md text-center mb-12">
+            <h3 class="text-2xl mb-4">Joyeux anniversaire !</h3>
+            <div class="flex justify-center space-x-4 md:space-x-8">
+                <div class="flex flex-col items-center">
+                    <div class="text-3xl md:text-4xl font-bold text-gold" id="days">00</div>
+                    <div class="text-sm">Jours</div>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="text-3xl md:text-4xl font-bold text-gold" id="hours">00</div>
+                    <div class="text-sm">Heures</div>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="text-3xl md:text-4xl font-bold text-gold" id="minutes">00</div>
+                    <div class="text-sm">Minutes</div>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="text-3xl md:text-4xl font-bold text-gold" id="seconds">00</div>
+                    <div class="text-sm">Secondes</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="bg-gray-50 py-12 fade-in">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl text-center mb-10 font-semibold">Paroles de sagesse</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="quote-card bg-white p-6 rounded-lg shadow-md">
+                    <p class="text-lg mb-4">"La vieillesse est noble quand elle se défend bien, quand elle garde ses droits, quand elle n'est asservie à personne et quand elle exerce son autorité sur les siens jusqu'à son dernier souffle."</p>
+                    <p class="italic text-right">— Cicéron</p>
+                </div>
+                
+                <div class="quote-card bg-white p-6 rounded-lg shadow-md">
+                    <p class="text-lg mb-4">"La sagesse, c'est d'avoir des rêves suffisamment grands pour ne pas les perdre de vue lorsqu'on les poursuit."</p>
+                    <p class="italic text-right">— Oscar Wilde</p>
+                </div>
+                
+                <div class="quote-card bg-white p-6 rounded-lg shadow-md">
+                    <p class="text-lg mb-4">"L'âge est une question d'esprit par-dessus la matière. Si vous ne vous en souciez pas, ça n'a pas d'importance."</p>
+                    <p class="italic text-right">— Mark Twain</p>
+                </div>
+                
+                <div class="quote-card bg-white p-6 rounded-lg shadow-md">
+                    <p class="text-lg mb-4">"Les années ridées notre peau, mais renoncer à l'enthousiasme ride notre âme."</p>
+                    <p class="italic text-right">— Samuel Ullman</p>
+                </div>
+                
+                <div class="quote-card bg-white p-6 rounded-lg shadow-md md:col-span-2">
+                    <p class="text-lg mb-4">"La jeunesse n'est pas une période de la vie, elle est un état d'esprit, un effet de la volonté, une qualité de l'imagination, une intensité émotive, une victoire du courage sur la timidité, du goût de l'aventure sur l'amour du confort."</p>
+                    <p class="italic text-right">— Général MacArthur</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container mx-auto px-4 py-12 text-center fade-in">
+        <h2 class="text-3xl md:text-4xl mb-6 font-semibold">67 ans de merveilleux moments</h2>
+        <p class="text-lg max-w-3xl mx-auto mb-8">Chaque année a été un chapitre unique dans une histoire extraordinaire. Aujourd'hui, nous célébrons non seulement votre anniversaire, mais aussi l'impact positif que vous avez eu sur nos vies.</p>
+        
+        <div class="inline-block border-t-4 border-b-4 border-gold py-6 px-8 mb-8">
+            <p class="text-2xl serif italic">"Les années sont des trésors qu'on accumule avec sagesse"</p>
+        </div>
+    </section>
+    
+    <footer class="bg-gray-100 py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p class="mb-2">Avec amour et respect,</p>
+            <p class="text-xl font-semibold serif mb-6">Daniel</p>
+            <p class="text-sm text-gray-600">© 2024 - Site créé spécialement pour célébrer les 67 ans de FEBON Messanvi</p>
+        </div>
+    </footer>
+
+    <script>
+        // Create confetti effect
+        document.addEventListener('DOMContentLoaded', function() {
+            createConfetti();
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+            
+            // Add fade-in effect to sections as they come into view
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('opacity-100');
+                        entry.target.classList.remove('opacity-0', 'translate-y-10');
+                    }
+                });
+            }, observerOptions);
+            
+            document.querySelectorAll('section').forEach(section => {
+                if (!section.classList.contains('fade-in')) {
+                    section.classList.add('opacity-0', 'translate-y-10', 'transition', 'duration-1000');
+                    observer.observe(section);
+                }
+            });
+        });
+        
+        function createConfetti() {
+            const confettiContainer = document.getElementById('confetti-container');
+            const colors = ['#d4af37', '#ffffff', '#f0f0f0', '#e6e6e6'];
+            
+            for (let i = 0; i < 50; i++) {
+                setTimeout(() => {
+                    const confetti = document.createElement('div');
+                    confetti.classList.add('confetti');
+                    
+                    // Randomize confetti properties
+                    const size = Math.random() * 10 + 5;
+                    const color = colors[Math.floor(Math.random() * colors.length)];
+                    const left = Math.random() * 100;
+                    const animationDuration = Math.random() * 3 + 3;
+                    
+                    confetti.style.width = `${size}px`;
+                    confetti.style.height = `${size}px`;
+                    confetti.style.backgroundColor = color;
+                    confetti.style.left = `${left}%`;
+                    confetti.style.animationDuration = `${animationDuration}s`;
+                    confetti.style.opacity = '0';
+                    
+                    confettiContainer.appendChild(confetti);
+                    
+                    // Trigger animation
+                    setTimeout(() => {
+                        confetti.style.opacity = '1';
+                    }, 10);
+                    
+                    // Remove after animation completes
+                    setTimeout(() => {
+                        confetti.remove();
+                    }, animationDuration * 1000);
+                }, Math.random() * 5000); // Stagger confetti creation
+            }
+            
+            // Create more confetti every 5 seconds
+            setTimeout(createConfetti, 5000);
+        }
+        
+        function updateCountdown() {
+            const targetDate = new Date("May 17, 2024 00:00:00").getTime();
+            const now = new Date().getTime();
+            const difference = targetDate - now;
+            
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+            
+            document.getElementById("days").innerText = days.toString().padStart(2, '0');
+            document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
+            document.getElementById("minutes").innerText = minutes.toString().padStart(2, '0');
+            document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
+        }
+    </script>
+</body>
+</html>
